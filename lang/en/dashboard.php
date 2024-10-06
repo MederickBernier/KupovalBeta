@@ -30,4 +30,9 @@ return [
     'shipping_taxes' => 'Shipping & Taxes',
     'security_access' => 'Security & Access',
     'my_account' => 'My Account',
+    'overview' => "Overview",
+    "orders" => "Orders",
+    "activities_users" => "Activities & Users",
+    "customers_tickets" => "Customers & Tickets",
+    "user_feedback" => "User Feedback",
 ];

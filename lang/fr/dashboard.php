@@ -6,8 +6,8 @@ return [
     'manage_users' => 'Gérer les utilisateurs',
     'user_roles_permissions' => 'Rôles et permissions des utilisateurs',
     'user_activitylogs' => 'Journaux d\'activité des utilisateurs',
-    'artworks' => 'Oeuvres',
-    'manage_artworks' => 'Gérer les oeuvres',
+    'artworks' => 'Œuvres',
+    'manage_artworks' => 'Gérer les œuvres',
     'categories' => 'Catégories',
     'tags' => 'Étiquettes',
     'inventory_management' => 'Gestion des stocks',
@@ -30,4 +30,9 @@ return [
     'shipping_taxes' => 'Expédition et taxes',
     'security_access' => 'Sécurité et accès',
     'my_account' => 'Mon compte',
+    'overview' => 'Aperçu',
+    'activities_users' => 'Activités et utilisateurs',
+    'customers_tickets' => 'Clients et billets',
+    'user_feedback' => 'Retour des utilisateurs',
 ];
+

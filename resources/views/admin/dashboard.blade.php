@@ -7,22 +7,22 @@
     <!-- Tabs Navigation -->
     <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
         <li class="nav-item" role="presentation">
-            <a class="nav-link active text-dark" id="overview-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+            <a class="nav-link active text-dark" id="overview-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">@lang('dashboard.overview')</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-dark" id="orders-tab" data-bs-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false">Orders</a>
+            <a class="nav-link text-dark" id="orders-tab" data-bs-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false">@lang('dashboard.orders')</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-dark" id="activities-tab" data-bs-toggle="tab" href="#activities" role="tab" aria-controls="activities" aria-selected="false">Activities & Users</a>
+            <a class="nav-link text-dark" id="activities-tab" data-bs-toggle="tab" href="#activities" role="tab" aria-controls="activities" aria-selected="false">@lang('dashboard.activities_users')</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-dark" id="products-tab" data-bs-toggle="tab" href="#products" role="tab" aria-controls="products" aria-selected="false">Products</a>
+            <a class="nav-link text-dark" id="products-tab" data-bs-toggle="tab" href="#products" role="tab" aria-controls="products" aria-selected="false">@lang('dashboard.artworks')</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-dark" id="customers-tab" data-bs-toggle="tab" href="#customers" role="tab" aria-controls="customers" aria-selected="false">Customers & Tickets</a>
+            <a class="nav-link text-dark" id="customers-tab" data-bs-toggle="tab" href="#customers" role="tab" aria-controls="customers" aria-selected="false">@lang('dashboard.customers_tickets')</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-dark" id="feedback-tab" data-bs-toggle="tab" href="#feedback" role="tab" aria-controls="feedback" aria-selected="false">User Feedback</a>
+            <a class="nav-link text-dark" id="feedback-tab" data-bs-toggle="tab" href="#feedback" role="tab" aria-controls="feedback" aria-selected="false">@lang('dashboard.user_feedback')</a>
         </li>
     </ul>
 
