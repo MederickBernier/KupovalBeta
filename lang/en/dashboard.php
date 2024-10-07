@@ -35,4 +35,5 @@ return [
     "activities_users" => "Activities & Users",
     "customers_tickets" => "Customers & Tickets",
     "user_feedback" => "User Feedback",
+    "view_site" => "View Site",
 ];

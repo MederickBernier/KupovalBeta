@@ -34,5 +34,6 @@ return [
     'activities_users' => 'Activités et utilisateurs',
     'customers_tickets' => 'Clients et billets',
     'user_feedback' => 'Retour des utilisateurs',
+    "view_site" => "Voir le site",
 ];
 

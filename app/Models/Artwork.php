@@ -18,4 +18,8 @@ class Artwork extends Model
     public function artist(){
         return $this->belongsTo(User::class, 'artist_id');
     }
+
+    public function images(){
+        return $this->hasMany(ArtworkImage::class);
+    }
 }

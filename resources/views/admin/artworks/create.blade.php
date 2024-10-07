@@ -18,8 +18,13 @@
         </div>
 
         <div class="mb-3">
-            <label for="image_path" class="form-label">Image</label>
-            <input type="file" class="form-control" id="image_path" name="image_path">
+            <label for="main_image" class="form-label">Main Image</label>
+            <input type="file" class="form-control" id="main_image" name="main_image" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="additional_images" class="form-label">Additional Images</label>
+            <input type="file" class="form-control" id="additional_images" name="additional_images[]" multiple>
         </div>
 
         <button type="submit" class="btn btn-primary">Create</button>

@@ -4,6 +4,13 @@
             <i class="bi bi-speedometer2"></i> @lang('dashboard.dashboard')
         </a>
         <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="{{ route('index') }}">
+                    <i class="bi bi-arrow-return-left"></i> @lang('dashboard.view_site')
+                </a>
+            </li>
+
             <!-- Dashboard Section -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.dashboard') }}">

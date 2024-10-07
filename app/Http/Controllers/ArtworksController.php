@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Artwork;
+use App\Models\ArtworkImage;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ArtworksController extends Controller
 {
@@ -20,25 +23,43 @@ class ArtworksController extends Controller
         return view('admin.artworks.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image_path' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'main_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'additional_images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $imagePath = null;
-        if($request->hasFile('image_path')){
-            $imagePath = $request->file('image_path')->store('artworks','public');
+        $mainImageName = null;
+        if ($request->hasFile('main_image')) {
+            $mainImage = $request->file('main_image');
+            $mainImageName = Str::uuid() . '.' . $mainImage->getClientOriginalExtension();
+            $mainImage->move(public_path('images'), $mainImageName);
         }
-        Artwork::create([
+
+        $artwork = Artwork::create([
             'artist_id' => auth()->id(),
             'title' => $request->input('title'),
             'description' => $request->input('description'),
-            'image_path' => $imagePath,
+            'image_path' => $mainImageName,
         ]);
 
-        return redirect()->route('admin.artworks.index')->with('success','Artwork created successfully');
+        if ($request->hasFile('additional_images')) {
+            foreach ($request->file('additional_images') as $image) {
+                $imageName = Str::uuid() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('images'), $imageName);
+
+                ArtworkImage::create([
+                    'artwork_id' => $artwork->id,
+                    'image_path' => $imageName,
+                    'is_main' => false,
+                ]);
+            }
+        }
+
+        return redirect()->route('admin.artworks.index')->with('success', 'Artwork created successfully');
     }
 
     public function edit(Artwork $artwork){
