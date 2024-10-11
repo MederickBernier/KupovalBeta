@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class ArtworksController extends Controller
 {
     public function index(){
-        $artworks = Artwork::all();
+        $artworks = Artwork::withTrashed()->get();
         $page = "Artworks";
         return view('admin.artworks.index',[
             $page => $page,
@@ -91,5 +91,22 @@ class ArtworksController extends Controller
     public function destroy(Artwork $artwork){
         $artwork->delete();
         return redirect()->route('admin.artworks.index')->with('success','Artwork deleted successfully');
+    }
+
+    public function restore($id){
+        Artwork::withTrashed()->where('id', $id)->restore();
+        return redirect()->route('admin.artworks.index')->with('success','Artwork restored successfully');
+    }
+
+    public function forceDelete($id){
+        Artwork::withTrashed()->where('id', $id)->forceDelete();
+        return redirect()->route('admin.artworks.index')->with('success','Artwork permanently deleted successfully');
+    }
+
+    public function show($id){
+        $artwork = Artwork::withTrashed()->findOrFail($id);
+        return view('admin.artworks.show',[
+            'artwork' => $artwork,
+        ]);
     }
 }
