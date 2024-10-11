@@ -16,6 +16,8 @@ class ArtworkImage extends Model
         'is_main',
     ];
 
+    protected $dates = ['deleted_at'];
+
     public function artwork(){
         return $this->belongsTo(Artwork::class);
     }

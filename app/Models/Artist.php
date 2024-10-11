@@ -17,6 +17,8 @@ class Artist extends Model
         'profile_picture',
     ];
 
+    protected $dates = ['deleted_at'];
+
     public function user(){
         return $this->belongsTo(User::class);
     }

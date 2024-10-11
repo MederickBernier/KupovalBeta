@@ -17,6 +17,8 @@ class Review extends Model
         'artwork_id',
     ];
 
+    protected $dates = ['deleted_at'];
+
     public function user(){
         return $this->belongsTo(User::class);
     }

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('artwork_id')->constrained()->onDelete('cascade');
             $table->string('image_path');
             $table->boolean('is_main')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

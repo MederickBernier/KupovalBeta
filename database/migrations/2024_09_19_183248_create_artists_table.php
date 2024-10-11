@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('alias')->unique();
             $table->text('bio')->nullable();
             $table->string('profile_picture')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

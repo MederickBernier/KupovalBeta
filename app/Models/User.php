@@ -31,6 +31,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    protected $dates = ['deleted_at'];
+
     public function isAdmin(){
         return $this->role === 'admin';
     }

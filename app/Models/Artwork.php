@@ -19,6 +19,8 @@ class Artwork extends Model
         'image_path',
     ];
 
+    protected $dates = ['deleted_at'];
+
     public function artist(){
         return $this->belongsTo(User::class, 'artist_id');
     }

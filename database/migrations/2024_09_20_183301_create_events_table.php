@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('location');
             $table->date('date');
             $table->foreignId('artist_id')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

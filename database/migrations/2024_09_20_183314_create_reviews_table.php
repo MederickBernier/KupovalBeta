@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('rating');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('artwork_id')->constrained('artworks');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
