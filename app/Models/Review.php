@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Review extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
     protected $fillable = [
         'content',
         'rating',
@@ -19,7 +21,7 @@ class Review extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function artowork(){
+    public function artwork(){
         return $this->belongsTo(Artwork::class);
     }
 }
