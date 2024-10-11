@@ -62,6 +62,19 @@
                     <a href="#" data-bs-toggle="modal" data-bs-target="#editSecurityModal" class="btn btn-outline-primary">@lang('user_profile.change_password')</a>
                 </div>
             </div>
+
+            <!-- Delete Account Section -->
+            <div class="row align-items-center my-3">
+                <div class="col-md-3 text-md-end text-start">
+                    <p class="mb-0" style="color: #dc3545;">@lang('user_profile.delete_account'):</p>
+                </div>
+                <div class="col-md-9">
+                    <form action="{{ route('user.deleteAccount') }}" method="POST" onsubmit="return confirm('@lang('user_profile.confirm_delete_account')');">
+                        @csrf
+                        <button type="submit" class="btn btn-outline-danger">@lang('user_profile.delete_account')</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -23,11 +23,14 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 // Routes for logged-in users
-Route::middleware(['auth', AdminMiddleware::class])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [UserController::class, 'showProfile'])->name('profile');
 
+    // Route for deleting user account
+    Route::post('/user/delete-account', [UserController::class, 'deleteAccount'])->name('user.deleteAccount');
+
     // Admin dashboard route
-    Route::prefix('admin')->name('admin.')->group(function () {
+    Route::prefix('admin')->middleware(AdminMiddleware::class)->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'showDashboard'])->name('dashboard');
 
         // Artwork routes
@@ -39,3 +42,4 @@ Route::middleware(['auth', AdminMiddleware::class])->group(function () {
         Route::delete('/artworks/{artwork}', [ArtworksController::class, 'destroy'])->name('artworks.destroy');
     });
 });
+

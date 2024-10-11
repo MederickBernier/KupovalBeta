@@ -28,4 +28,6 @@ return [
     "confirm_password" => "Confirm Password",
     "first_name" => "First Name",
     "last_name" => "Last Name",
+    "delete_account" => "Delete Account",
+    "confirm_delete_account" => "Are you sure you want to delete your account?",
 ];
