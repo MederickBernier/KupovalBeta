@@ -29,6 +29,8 @@ class SettingsController extends Controller
         $this->saveSetting('seo_meta_title', $request->seo_meta_title);
         $this->saveSetting('seo_meta_description', $request->seo_meta_description);
 
+        session()->forget('settings');
+
         return redirect()->route('admin.settings.index')->with('success', 'Settings updated successfully');
     }
 
@@ -42,6 +44,8 @@ class SettingsController extends Controller
         $this->saveSetting('curency', $request->currency);
         $this->saveSetting('tps', $request->tps);
         $this->saveSetting('tvq', $request->tvq);
+
+        session()->forget('settings');
 
         return redirect()->route('admin.settings.index')->with('success', 'Payment settings updated successfully');
     }
