@@ -23,4 +23,8 @@ class Event extends Model
     public function artist(){
         return $this->belongsTo(User::class, 'artist_id');
     }
+
+    public function getDisplayName(){
+        return $this->title;
+    }
 }

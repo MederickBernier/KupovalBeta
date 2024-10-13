@@ -35,5 +35,6 @@ return [
     'customers_tickets' => 'Clients et billets',
     'user_feedback' => 'Retour des utilisateurs',
     "view_site" => "Voir le site",
+    "list_manage_users" => "Liste/Gestion des utilisateurs",
 ];
 

@@ -33,6 +33,18 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->middleware(AdminMiddleware::class)->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'showDashboard'])->name('dashboard');
 
+        //User routes
+        Route::get('/users',[AdminController::class, 'listUsers'])->name('users.index');
+        Route::get('/users/create',[AdminController::class, 'createUser'])->name('users.create');
+        Route::get('/users/{user}/edit',[AdminController::class, 'editUser'])->name('users.edit');
+        Route::put('/users/{user}',[AdminController::class, 'updateUser'])->name('users.update');
+        Route::delete('/user/{user}',[AdminController::class, 'softDeleteUser'])->name('users.delete');
+        Route::put('/users/{id}/toggle', [AdminController::class, 'toggleUserActivate'])->name('users.toggle');
+
+        //Event Log routes
+        Route::get('/event-logs', [AdminController::class, 'showEventLog'])->name('event-logs.index');
+
+
         // Artwork routes
         Route::get('/artworks', [ArtworksController::class, 'index'])->name('artworks.index');
         Route::get('/artworks/create', [ArtworksController::class, 'create'])->name('artworks.create');

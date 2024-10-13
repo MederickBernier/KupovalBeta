@@ -26,9 +26,19 @@
                 </a>
                 <div class="collapse" id="userCollapse">
                     <ul class="list-unstyled">
-                        <li><a href="#" class="nav-link">@lang('dashboard.manage_users')</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.user_roles_permissions')</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.user_activitylogs')</a></li>
+                        <li><a href="{{ route('admin.users.index') }}" class="nav-link">@lang('dashboard.list_manage_users')</a></li>
+                    </ul>
+                </div>
+            </li>
+            <!-- User Management Section -->
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#logsCollapse" role="button" aria-expanded="false" aria-controls="logsCollapse">
+                    <i class="bi bi-journal-richtext"></i> @lang('dashboard.logs')
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <div class="collapse" id="logsCollapse">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('admin.event-logs.index') }}" class="nav-link">@lang('dashboard.logs')</a></li>
                     </ul>
                 </div>
             </li>
