@@ -18,7 +18,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="main_image" class="form-label">{{ __('artworks.form.main_image') }}</label>
+            <label for="main_image" class="form-label">{{ __('artworks.form.image') }}</label>
             <input type="file" class="form-control" id="main_image" name="main_image" required>
         </div>
 

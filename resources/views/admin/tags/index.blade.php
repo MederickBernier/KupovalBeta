@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <h2>{{ __('tags.tags') }}</h2>
 
     <a href="{{ route('admin.tags.create') }}" class="btn btn-success mb-3">{{ __('tags.create_tag_button') }}</a>

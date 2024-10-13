@@ -1,5 +1,7 @@
 <?php
 
 return [
-    "title" => "Galerie",
+    'title' => 'Galerie',
 ];
+
+?>

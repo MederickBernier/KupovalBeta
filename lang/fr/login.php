@@ -1,10 +1,12 @@
 <?php
 
 return [
-    "welcome_back" => "Bon retour! Veuillez vous connecter",
-    "enter_credentials" => "Entrez vos identifiants pour accéder à votre compte",
-    "email_address" => "Adresse courriel",
-    "password" => "Mot de passe",
-    "confirm_password" => "Confirmez le mot de passe",
-    "login_button" => "Connexion",
+    'welcome_back' => 'Bienvenue de nouveau! Veuillez vous connecter',
+    'enter_credentials' => 'Entrez vos identifiants pour accéder à votre compte',
+    'email_address' => 'Adresse E-Mail',
+    'password' => 'Mot de passe',
+    'confirm_password' => 'Confirmer le mot de passe',
+    'login_button' => 'Connexion',
 ];
+
+?>

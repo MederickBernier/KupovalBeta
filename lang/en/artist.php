@@ -1,5 +1,7 @@
 <?php
 
 return [
-    "default_image_alt" => "Artist Image",
+    'default_image_alt' => 'Artist Image',
 ];
+
+?>

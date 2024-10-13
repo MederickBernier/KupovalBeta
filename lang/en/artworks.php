@@ -18,18 +18,13 @@ return [
     'form' => [
         'title' => 'Title',
         'description' => 'Description',
-        'image' => 'Image',
-        'category' => 'Category',
-        'tags' => 'Tags',
-        'update' => 'Update',
-    ],
-    'add_new_artwork' => 'Add New Artwork',
-    'form' => [
-        'title' => 'Title',
-        'description' => 'Description',
-        'main_image' => 'Main Image',
+        'image' => 'Main Image',
         'category' => 'Category',
         'tags' => 'Tags',
         'create' => 'Create',
+        'update' => 'Update',
     ],
+    'add_new_artwork' => 'Add New Artwork',
 ];
+
+?>

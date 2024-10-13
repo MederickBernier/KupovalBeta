@@ -1,5 +1,5 @@
 <?php
 
 return [
-    "all_rights_reserved" => "All rights reserved.",
+    'all_rights_reserved' => 'All rights reserved.',
 ];
