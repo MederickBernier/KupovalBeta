@@ -1,6 +1,6 @@
 <div class="card mt-4 shadow-sm">
     <div class="card-header">
-        <h5>Recent Activities</h5>
+        <h5>{{ __('dashboard.recent_activities') }}</h5>
     </div>
     <div class="card-body p-0">
         <ul class="list-group list-group-flush">

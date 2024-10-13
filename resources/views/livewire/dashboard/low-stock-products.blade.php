@@ -1,13 +1,13 @@
 <div class="card mt-4">
     <div class="card-header">
-        <h5>Low Stock Products</h5>
+        <h5>{{ __('dashboard.low_stock_products') }}</h5>
     </div>
     <div class="card-body p-0">
         <table class="table table-striped mb-0">
             <thead>
                 <tr>
-                    <th>Product Name</th>
-                    <th>Stock</th>
+                    <th>{{ __('dashboard.product_name') }}</th>
+                    <th>{{ __('dashboard.stock') }}</th>
                 </tr>
             </thead>
             <tbody>

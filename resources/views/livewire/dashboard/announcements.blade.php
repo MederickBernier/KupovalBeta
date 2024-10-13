@@ -1,6 +1,6 @@
 <div class="card mt-4">
     <div class="card-header">
-        <h5>Announcements</h5>
+        <h5>{{ __('dashboard.announcements') }}</h5>
     </div>
     <div class="card-body p-0">
         <ul class="list-group list-group-flush">

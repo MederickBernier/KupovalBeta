@@ -2,18 +2,18 @@
 
 @section('content')
 <div class="container mt-5">
-    <h1>Manage Users</h1>
+    <h1>{{ __('dashboard.manage_users') }}</h1>
 
     <!-- User Table Layout -->
     <table class="table table-hover table-bordered align-middle">
         <thead class="table-dark">
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Status</th>
-                <th class="text-center">Actions</th>
+                <th>{{ __('dashboard.first_name') }}</th>
+                <th>{{ __('dashboard.last_name') }}</th>
+                <th>{{ __('dashboard.email') }}</th>
+                <th>{{ __('dashboard.role') }}</th>
+                <th>{{ __('dashboard.status') }}</th>
+                <th class="text-center">{{ __('dashboard.actions') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -24,21 +24,21 @@
                 <td>{{ $user->email }}</td>
                 <td>
                     @if ($user->role === 'admin')
-                    <span class="badge bg-warning text-dark">Admin</span>
+                    <span class="badge bg-warning text-dark">{{ __('dashboard.admin') }}</span>
                     @else
-                    <span class="badge bg-info text-dark">Client</span>
+                    <span class="badge bg-info text-dark">{{ __('dashboard.client') }}</span>
                     @endif
                 </td>
                 <td>
                     @if ($user->trashed())
-                    <span class="badge bg-danger">Deactivated</span>
+                    <span class="badge bg-danger">{{ __('dashboard.deactivated') }}</span>
                     @else
-                    <span class="badge bg-success">Active</span>
+                    <span class="badge bg-success">{{ __('dashboard.active') }}</span>
                     @endif
                 </td>
                 <td class="text-center">
                     <!-- Edit Button -->
-                    <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-warning me-1">Edit</a>
+                    <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-warning me-1">{{ __('dashboard.edit') }}</a>
 
                     <!-- Toggle Activation Button -->
                     @if ($user->id !== auth()->id())
@@ -47,14 +47,14 @@
                         @method('PUT')
 
                         @if ($user->trashed())
-                        <button type="submit" class="btn btn-sm btn-info">Activate</button>
+                        <button type="submit" class="btn btn-sm btn-info">{{ __('dashboard.activate') }}</button>
                         @else
-                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to deactivate this user?')">Deactivate</button>
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('{{ __('dashboard.confirm_deactivate') }}')">{{ __('dashboard.deactivate') }}</button>
                         @endif
                     </form>
                     @else
                     <!-- Disabled Button for Current Admin -->
-                    <button class="btn btn-sm btn-secondary" disabled>Your Account</button>
+                    <button class="btn btn-sm btn-secondary" disabled>{{ __('dashboard.your_account') }}</button>
                     @endif
                 </td>
             </tr>

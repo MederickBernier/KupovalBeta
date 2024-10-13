@@ -1,16 +1,16 @@
 <div class="card mt-4">
     <div class="card-header">
-        <h5>Recent Orders</h5>
+        <h5>{{ __('dashboard.recent_orders') }}</h5>
     </div>
     <div class="card-body p-0">
         <table class="table table-striped mb-0">
             <thead class="table-dark">
                 <tr>
-                    <th>Order ID</th>
-                    <th>Customer</th>
-                    <th>Status</th>
-                    <th>Total</th>
-                    <th>Date</th>
+                    <th>{{ __('dashboard.order_id') }}</th>
+                    <th>{{ __('dashboard.customer') }}</th>
+                    <th>{{ __('dashboard.status') }}</th>
+                    <th>{{ __('dashboard.total') }}</th>
+                    <th>{{ __('dashboard.date') }}</th>
                 </tr>
             </thead>
             <tbody>

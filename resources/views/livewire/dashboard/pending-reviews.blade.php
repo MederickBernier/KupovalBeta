@@ -1,16 +1,16 @@
 <div class="card mt-4">
     <div class="card-header">
-        <h5>Pending Reviews</h5>
+        <h5>{{ __('dashboard.pending_reviews') }}</h5>
     </div>
     <div class="card-body p-0">
         <table class="table table-striped mb-0">
             <thead>
                 <tr>
-                    <th>Customer</th>
-                    <th>Product</th>
-                    <th>Rating</th>
-                    <th>Date</th>
-                    <th>Comment</th>
+                    <th>{{ __('dashboard.customer') }}</th>
+                    <th>{{ __('dashboard.product') }}</th>
+                    <th>{{ __('dashboard.rating') }}</th>
+                    <th>{{ __('dashboard.date') }}</th>
+                    <th>{{ __('dashboard.comment') }}</th>
                 </tr>
             </thead>
             <tbody>

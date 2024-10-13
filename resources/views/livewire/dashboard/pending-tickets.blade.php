@@ -1,16 +1,16 @@
 <div class="card mt-4 shadow-sm">
     <div class="card-header">
-        <h5>Pending Support Tickets</h5>
+        <h5>{{ __('dashboard.pending_tickets') }}</h5>
     </div>
     <div class="card-body p-0">
         <table class="table table-striped mb-0">
             <thead>
                 <tr>
-                    <th>Ticket ID</th>
-                    <th>Subject</th>
-                    <th>Customer</th>
-                    <th>Status</th>
-                    <th>Submitted On</th>
+                    <th>{{ __('dashboard.ticket_id') }}</th>
+                    <th>{{ __('dashboard.subject') }}</th>
+                    <th>{{ __('dashboard.customer') }}</th>
+                    <th>{{ __('dashboard.status') }}</th>
+                    <th>{{ __('dashboard.submitted_on') }}</th>
                 </tr>
             </thead>
             <tbody>

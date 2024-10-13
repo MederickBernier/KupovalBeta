@@ -1,14 +1,14 @@
 <div class="card mt-4">
     <div class="card-header">
-        <h5>Top Customers</h5>
+        <h5>{{ __('dashboard.top_customers') }}</h5>
     </div>
     <div class="card-body p-0">
         <table class="table table-striped mb-0">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Total Spent</th>
-                    <th>Orders</th>
+                    <th>{{ __('dashboard.name') }}</th>
+                    <th>{{ __('dashboard.total_spent') }}</th>
+                    <th>{{ __('dashboard.orders') }}</th>
                 </tr>
             </thead>
             <tbody>

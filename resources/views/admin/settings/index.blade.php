@@ -2,66 +2,65 @@
 
 @section('content')
 <div class="container">
-    <h1>Settings</h1>
+    <h1>{{ __('settings.settings') }}</h1>
 
     <form action="{{ route('admin.settings.updateGeneral') }}" method="POST">
         @csrf
-        <h3>General Settings</h3>
+        <h3>{{ __('settings.general_settings') }}</h3>
 
         <div class="mb-3">
-            <label for="site_name" class="form-label">Site Name</label>
+            <label for="site_name" class="form-label">{{ __('settings.site_name') }}</label>
             <input type="text" class="form-control" id="site_name" name="site_name" value="{{ $settings['site_name'] ?? '' }}" required>
         </div>
 
         <div class="mb-3">
-            <label for="default_language" class="form-label">Default Language</label>
+            <label for="default_language" class="form-label">{{ __('settings.default_language') }}</label>
             <select class="form-control" id="default_language" name="default_language">
-                <option value="en" {{ ($settings['default_language'] ?? '') == 'en' ? 'selected' : '' }}>English</option>
-                <option value="fr" {{ ($settings['default_language'] ?? '') == 'fr' ? 'selected' : '' }}>French Canadian</option>
+                <option value="en" {{ ($settings['default_language'] ?? '') == 'en' ? 'selected' : '' }}>{{ __('settings.english') }}</option>
+                <option value="fr" {{ ($settings['default_language'] ?? '') == 'fr' ? 'selected' : '' }}>{{ __('settings.french_canadian') }}</option>
             </select>
         </div>
 
         <div class="mb-3">
-            <label for="timezone" class="form-label">Timezone</label>
+            <label for="timezone" class="form-label">{{ __('settings.timezone') }}</label>
             <input type="text" class="form-control" id="timezone" name="timezone" value="{{ $settings['timezone'] ?? '' }}" required>
         </div>
 
         <div class="mb-3">
-            <label for="seo_meta_title" class="form-label">SEO Meta Title</label>
+            <label for="seo_meta_title" class="form-label">{{ __('settings.seo_meta_title') }}</label>
             <input type="text" class="form-control" id="seo_meta_title" name="seo_meta_title" value="{{ $settings['seo_meta_title'] ?? '' }}">
         </div>
 
         <div class="mb-3">
-            <label for="seo_meta_description" class="form-label">SEO Meta Description</label>
+            <label for="seo_meta_description" class="form-label">{{ __('settings.seo_meta_description') }}</label>
             <textarea class="form-control" id="seo_meta_description" name="seo_meta_description">{{ $settings['seo_meta_description'] ?? '' }}</textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Update General Settings</button>
+        <button type="submit" class="btn btn-primary">{{ __('settings.update_general_settings') }}</button>
     </form>
 
     <hr>
 
-    {{-- Payment Settings Form --}}
     <form action="{{ route('admin.settings.updatePayment') }}" method="POST">
         @csrf
-        <h3>Payment Settings</h3>
+        <h3>{{ __('settings.payment_settings') }}</h3>
 
         <div class="mb-3">
-            <label for="currency" class="form-label">Currency</label>
+            <label for="currency" class="form-label">{{ __('settings.currency') }}</label>
             <input type="text" class="form-control" id="currency" name="currency" value="{{ $settings['currency'] ?? '' }}" required>
         </div>
 
         <div class="mb-3">
-            <label for="tps" class="form-label">TPS (%)</label>
+            <label for="tps" class="form-label">{{ __('settings.tps') }} (%)</label>
             <input type="text" class="form-control" id="tps" name="tps" value="{{ $settings['tps'] ?? '5' }}" required>
         </div>
 
         <div class="mb-3">
-            <label for="tvq" class="form-label">TVQ (%)</label>
+            <label for="tvq" class="form-label">{{ __('settings.tvq') }} (%)</label>
             <input type="text" class="form-control" id="tvq" name="tvq" value="{{ $settings['tvq'] ?? '9.975' }}" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Update Payment Settings</button>
+        <button type="submit" class="btn btn-primary">{{ __('settings.update_payment_settings') }}</button>
     </form>
 </div>
 @endsection

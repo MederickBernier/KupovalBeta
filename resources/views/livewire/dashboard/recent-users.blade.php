@@ -1,15 +1,15 @@
 <div class="card mt-4 shadow-sm">
     <div class="card-header">
-        <h5>Recent User Registrations</h5>
+        <h5>{{ __('dashboard.recent_user_registrations') }}</h5>
     </div>
     <div class="card-body p-0">
         <table class="table table-striped mb-0">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Registration Date</th>
+                    <th>{{ __('dashboard.name') }}</th>
+                    <th>{{ __('dashboard.email') }}</th>
+                    <th>{{ __('dashboard.role') }}</th>
+                    <th>{{ __('dashboard.registration_date') }}</th>
                 </tr>
             </thead>
             <tbody>

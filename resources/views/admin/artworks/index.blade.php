@@ -2,19 +2,19 @@
 
 @section('content')
 <div class="container">
-    <h1>Artworks</h1>
-    <a href="{{ route('admin.artworks.create') }}" class="btn btn-primary mb-3">Add New Artwork</a>
+    <h1>{{ __('artworks.title') }}</h1>
+    <a href="{{ route('admin.artworks.create') }}" class="btn btn-primary mb-3">{{ __('artworks.add_new') }}</a>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Artist</th>
-                <th>Category</th>
-                <th>Tags</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Actions</th>
+                <th>{{ __('artworks.table.title') }}</th>
+                <th>{{ __('artworks.table.artist') }}</th>
+                <th>{{ __('artworks.table.category') }}</th>
+                <th>{{ __('artworks.table.tags') }}</th>
+                <th>{{ __('artworks.table.description') }}</th>
+                <th>{{ __('artworks.table.image') }}</th>
+                <th>{{ __('artworks.table.actions') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -31,11 +31,11 @@
                     <td>{{ $artwork->description }}</td>
                     <td><img src="{{ asset('images/' . $artwork->image_path) }}" width="100" alt="{{ $artwork->title }}"></td>
                     <td>
-                        <a href="{{ route('admin.artworks.edit', $artwork->id) }}" class="btn btn-warning">Edit</a>
+                        <a href="{{ route('admin.artworks.edit', $artwork->id) }}" class="btn btn-warning">{{ __('artworks.edit') }}</a>
                         <form action="{{ route('admin.artworks.destroy', $artwork->id) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger">{{ __('artworks.delete') }}</button>
                         </form>
                     </td>
                 </tr>
