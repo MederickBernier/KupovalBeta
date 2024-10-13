@@ -9,6 +9,7 @@ use App\Http\Controllers\ArtworksController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\SettingsController;
 
 // Public routes
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -66,5 +67,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/artworks/{artwork}/edit', [ArtworksController::class, 'edit'])->name('artworks.edit');
         Route::put('/artworks/{artwork}', [ArtworksController::class, 'update'])->name('artworks.update');
         Route::delete('/artworks/{artwork}', [ArtworksController::class, 'destroy'])->name('artworks.destroy');
+
+        // Settings routes
+        Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
+        Route::post('/settings/general', [SettingsController::class, 'updateGeneralSettings'])->name('settings.updateGeneral');
+        Route::post('/settings/payment', [SettingsController::class, 'updatePaymentSettings'])->name('settings.updatePayment');
+
     });
 });

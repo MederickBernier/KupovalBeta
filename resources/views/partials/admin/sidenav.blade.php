@@ -30,6 +30,7 @@
                     </ul>
                 </div>
             </li>
+
             <!-- Artworks Management Section -->
             <li class="nav-item">
                 <a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#artworksCollapse" role="button" aria-expanded="false" aria-controls="artworksCollapse">
@@ -76,7 +77,7 @@
                 </div>
             </li>
 
-            <!-- Content Management Section (Blog and Gallery) -->
+            <!-- Content Management Section -->
             <li class="nav-item">
                 <a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#contentCollapse" role="button" aria-expanded="false" aria-controls="contentCollapse">
                     <i class="bi bi-file-text-fill"></i> @lang('dashboard.content')
@@ -113,8 +114,8 @@
                 </a>
                 <div class="collapse" id="settingsCollapse">
                     <ul class="list-unstyled">
-                        <li><a href="#" class="nav-link">@lang('dashboard.general_settings')</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.payment_settings')</a></li>
+                        <li><a href="{{ route('admin.settings.index') }}" class="nav-link">@lang('dashboard.general_settings')</a></li>
+                        <li><a href="{{ route('admin.settings.index') }}" class="nav-link">@lang('dashboard.payment_settings')</a></li>
                         <li><a href="#" class="nav-link">@lang('dashboard.shipping_taxes')</a></li>
                         <li><a href="#" class="nav-link">@lang('dashboard.security_access')</a></li>
                     </ul>
