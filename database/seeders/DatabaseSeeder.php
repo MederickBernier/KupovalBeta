@@ -16,9 +16,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             ArtistSeeder::class,
+            CategoriesSeeder::class,
+            TagsSeeder::class,
             ArtworkSeeder::class,
             EventSeeder::class,
             ReviewSeeder::class,
         ]);
+
     }
 }

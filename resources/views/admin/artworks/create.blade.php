@@ -23,8 +23,21 @@
         </div>
 
         <div class="mb-3">
-            <label for="additional_images" class="form-label">Additional Images</label>
-            <input type="file" class="form-control" id="additional_images" name="additional_images[]" multiple>
+            <label for="category" class="form-label">Category</label>
+            <select name="category_id" class="form-control">
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="tags" class="form-label">Tags</label>
+            <select name="tags[]" class="form-control" multiple>
+                @foreach($tags as $tag)
+                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                @endforeach
+            </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Create</button>

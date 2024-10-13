@@ -30,19 +30,6 @@
                     </ul>
                 </div>
             </li>
-            <!-- User Management Section -->
-            <li class="nav-item">
-                <a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#logsCollapse" role="button" aria-expanded="false" aria-controls="logsCollapse">
-                    <i class="bi bi-journal-richtext"></i> @lang('dashboard.logs')
-                    <i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <div class="collapse" id="logsCollapse">
-                    <ul class="list-unstyled">
-                        <li><a href="{{ route('admin.event-logs.index') }}" class="nav-link">@lang('dashboard.logs')</a></li>
-                    </ul>
-                </div>
-            </li>
-
             <!-- Artworks Management Section -->
             <li class="nav-item">
                 <a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#artworksCollapse" role="button" aria-expanded="false" aria-controls="artworksCollapse">
@@ -53,8 +40,8 @@
                     <ul class="list-unstyled">
                         <li><a href="{{ route('admin.artworks.index') }}" class="nav-link">@lang('dashboard.manage_artworks')</a></li>
                         <li><a href="{{ route('admin.artworks.create') }}" class="nav-link">Create New Artwork</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.categories')</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.tags')</a></li>
+                        <li><a href="{{ route('admin.categories.index') }}" class="nav-link">@lang('dashboard.categories')</a></li>
+                        <li><a href="{{ route('admin.tags.index') }}" class="nav-link">@lang('dashboard.tags')</a></li>
                         <li><a href="#" class="nav-link">@lang('dashboard.inventory_management')</a></li>
                     </ul>
                 </div>

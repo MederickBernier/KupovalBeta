@@ -1,11 +1,9 @@
 <?php
-
 namespace Database\Seeders;
 
 use App\Models\Artwork;
-use App\Models\User;
 use App\Models\Review;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class ReviewSeeder extends Seeder
@@ -15,25 +13,33 @@ class ReviewSeeder extends Seeder
      */
     public function run(): void
     {
-        $reviews = [
-            [
-                'user_id' => 1,
-                'artwork_id' => 1,
-                'rating' => 5,
-                'content' => 'Amazing piece of artwork!',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'user_id' => 2,
-                'artwork_id' => 2,
-                'rating' => 4,
-                'content' => 'Really liked the details.',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ];
+        // Fetch artworks and users dynamically
+        $artwork1 = Artwork::first();
+        $artwork2 = Artwork::skip(1)->first(); // Get second artwork
+        $user1 = User::find(1);
+        $user2 = User::find(2);
 
-        Review::insert($reviews);
+        if ($artwork1 && $artwork2 && $user1 && $user2) {
+            $reviews = [
+                [
+                    'user_id' => $user1->id,
+                    'artwork_id' => $artwork1->id,
+                    'rating' => 5,
+                    'content' => 'Amazing piece of artwork!',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'user_id' => $user2->id,
+                    'artwork_id' => $artwork2->id,
+                    'rating' => 4,
+                    'content' => 'Really liked the details.',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+            ];
+
+            Review::insert($reviews);
+        }
     }
 }

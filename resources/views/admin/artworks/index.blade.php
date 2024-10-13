@@ -10,6 +10,8 @@
             <tr>
                 <th>Title</th>
                 <th>Artist</th>
+                <th>Category</th>
+                <th>Tags</th>
                 <th>Description</th>
                 <th>Image</th>
                 <th>Actions</th>
@@ -20,6 +22,12 @@
                 <tr>
                     <td>{{ $artwork->title }}</td>
                     <td>{{ $artwork->artist->name }}</td>
+                    <td>{{ $artwork->category->name }}</td>
+                    <td>
+                        @foreach($artwork->tags as $tag)
+                            <span class="badge bg-info">{{ $tag->name }}</span>
+                        @endforeach
+                    </td>
                     <td>{{ $artwork->description }}</td>
                     <td><img src="{{ asset('images/' . $artwork->image_path) }}" width="100" alt="{{ $artwork->title }}"></td>
                     <td>

@@ -19,11 +19,33 @@
         </div>
 
         <div class="mb-3">
-            <label for="image_path" class="form-label">Image</label>
-            <input type="file" class="form-control" id="image_path" name="image_path">
+            <label for="main_image" class="form-label">Image</label>
+            <input type="file" class="form-control" id="main_image" name="main_image">
             @if($artwork->image_path)
                 <img src="{{ asset('images/' . $artwork->image_path) }}" width="100" alt="{{ $artwork->title }}">
             @endif
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select name="category_id" class="form-control">
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}" @if($category->id == $artwork->category_id) selected @endif>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="tags" class="form-label">Tags</label>
+            <select name="tags[]" class="form-control" multiple>
+                @foreach($tags as $tag)
+                    <option value="{{ $tag->id }}" @if($artwork->tags->contains($tag->id)) selected @endif>
+                        {{ $tag->name }}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>

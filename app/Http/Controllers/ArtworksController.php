@@ -1,26 +1,25 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Artwork;
-use App\Models\ArtworkImage;
-use Illuminate\Support\Facades\Storage;
+use App\Models\Category;
+use App\Models\Tag;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class ArtworksController extends Controller
 {
-    public function index(){
-        $artworks = Artwork::withTrashed()->get();
-        $page = "Artworks";
-        return view('admin.artworks.index',[
-            $page => $page,
-            'artworks' => $artworks,
-        ]);
+    public function index()
+    {
+        $artworks = Artwork::with('category', 'tags', 'artist')->get();
+        return view('admin.artworks.index', compact('artworks'));
     }
 
-    public function create(){
-        return view('admin.artworks.create');
+    public function create()
+    {
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('admin.artworks.create', compact('categories', 'tags'));
     }
 
     public function store(Request $request)
@@ -29,7 +28,9 @@ class ArtworksController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'main_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'additional_images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'category_id' => 'required|exists:categories,id',
+            'tags' => 'nullable|array',
+            'tags.*' => 'exists:tags,id',
         ]);
 
         $mainImageName = null;
@@ -44,69 +45,57 @@ class ArtworksController extends Controller
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'image_path' => $mainImageName,
+            'category_id' => $request->input('category_id'),
         ]);
 
-        if ($request->hasFile('additional_images')) {
-            foreach ($request->file('additional_images') as $image) {
-                $imageName = Str::uuid() . '.' . $image->getClientOriginalExtension();
-                $image->move(public_path('images'), $imageName);
-
-                ArtworkImage::create([
-                    'artwork_id' => $artwork->id,
-                    'image_path' => $imageName,
-                    'is_main' => false,
-                ]);
-            }
+        if ($request->has('tags')) {
+            $artwork->tags()->sync($request->input('tags'));
         }
 
         return redirect()->route('admin.artworks.index')->with('success', 'Artwork created successfully');
     }
 
-    public function edit(Artwork $artwork){
-        return view('admin.artworks.edit',[
-            'artwork' => $artwork,
-        ]);
+    public function edit(Artwork $artwork)
+    {
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('admin.artworks.edit', compact('artwork', 'categories', 'tags'));
     }
 
-    public function update(Request $request, Artwork $artwork){
+    public function update(Request $request, Artwork $artwork)
+    {
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image_path' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'main_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'category_id' => 'required|exists:categories,id',
+            'tags' => 'nullable|array',
+            'tags.*' => 'exists:tags,id',
         ]);
 
-        if ($request->hasFile('image_path')) {
-            $imagePath = $request->file('image_path')->store('artworks', 'public');
-            $artwork->image_path = $imagePath;
+        if ($request->hasFile('main_image')) {
+            $mainImage = $request->file('main_image');
+            $mainImageName = Str::uuid() . '.' . $mainImage->getClientOriginalExtension();
+            $mainImage->move(public_path('images'), $mainImageName);
+            $artwork->image_path = $mainImageName;
         }
 
         $artwork->update([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
+            'category_id' => $request->input('category_id'),
         ]);
+
+        if ($request->has('tags')) {
+            $artwork->tags()->sync($request->input('tags'));
+        }
 
         return redirect()->route('admin.artworks.index')->with('success', 'Artwork updated successfully.');
     }
 
-    public function destroy(Artwork $artwork){
+    public function destroy(Artwork $artwork)
+    {
         $artwork->delete();
-        return redirect()->route('admin.artworks.index')->with('success','Artwork deleted successfully');
-    }
-
-    public function restore($id){
-        Artwork::withTrashed()->where('id', $id)->restore();
-        return redirect()->route('admin.artworks.index')->with('success','Artwork restored successfully');
-    }
-
-    public function forceDelete($id){
-        Artwork::withTrashed()->where('id', $id)->forceDelete();
-        return redirect()->route('admin.artworks.index')->with('success','Artwork permanently deleted successfully');
-    }
-
-    public function show($id){
-        $artwork = Artwork::withTrashed()->findOrFail($id);
-        return view('admin.artworks.show',[
-            'artwork' => $artwork,
-        ]);
+        return redirect()->route('admin.artworks.index')->with('success', 'Artwork deleted successfully.');
     }
 }

@@ -59,8 +59,4 @@ class AdminController extends Controller
             return redirect()->route('admin.users.index')->with('success','User deactivated successfully');
         }
     }
-
-    public function showEventLog(){
-        return view('admin.eventlog.index');
-    }
 }
