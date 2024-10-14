@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\EventController;
 
 // Public routes
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -72,6 +73,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
         Route::post('/settings/general', [SettingsController::class, 'updateGeneralSettings'])->name('settings.updateGeneral');
         Route::post('/settings/payment', [SettingsController::class, 'updatePaymentSettings'])->name('settings.updatePayment');
+
+        // Event routes
+        Route::get('/', [EventController::class, 'index'])->name('events.index');
+        Route::get('/create', [EventController::class, 'create'])->name('events.create');
+        Route::post('/', [EventController::class, 'store'])->name('events.store');
+        Route::get('/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
+        Route::put('/{event}', [EventController::class, 'update'])->name('events.update');
+        Route::delete('/{event}', [EventController::class, 'destroy'])->name('events.destroy');
 
     });
 });

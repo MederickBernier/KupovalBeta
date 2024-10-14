@@ -40,7 +40,7 @@
                 <div class="collapse" id="artworksCollapse">
                     <ul class="list-unstyled">
                         <li><a href="{{ route('admin.artworks.index') }}" class="nav-link">@lang('dashboard.manage_artworks')</a></li>
-                        <li><a href="{{ route('admin.artworks.create') }}" class="nav-link">Create New Artwork</a></li>
+                        <li><a href="{{ route('admin.artworks.create') }}" class="nav-link">@lang('artworks.add_new')</a></li>
                         <li><a href="{{ route('admin.categories.index') }}" class="nav-link">@lang('dashboard.categories')</a></li>
                         <li><a href="{{ route('admin.tags.index') }}" class="nav-link">@lang('dashboard.tags')</a></li>
                         <li><a href="#" class="nav-link">@lang('dashboard.inventory_management')</a></li>
@@ -71,8 +71,8 @@
                 </a>
                 <div class="collapse" id="eventsCollapse">
                     <ul class="list-unstyled">
-                        <li><a href="#" class="nav-link">@lang('dashboard.manage_events')</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.add_new_event')</a></li>
+                        <li><a href="{{ route('admin.events.index') }}" class="nav-link">@lang('dashboard.manage_events')</a></li>
+                        <li><a href="{{ route('admin.events.create') }}" class="nav-link">@lang('dashboard.add_new_event')</a></li>
                     </ul>
                 </div>
             </li>
