@@ -7,7 +7,7 @@
             @foreach($activities as $activity)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div class="d-flex align-items-center">
-                        <span class="badge me-2" style="background-color: #17a2b8;">{{ $activity['type'] }}</span>
+                        <span class="badge me-2 bg-info">{{ $activity['type'] }}</span> <!-- Bootstrap info badge -->
                         <span>{{ $activity['message'] }}</span>
                     </div>
                     <small class="text-muted">{{ \Carbon\Carbon::parse($activity['date'])->diffForHumans() }}</small>

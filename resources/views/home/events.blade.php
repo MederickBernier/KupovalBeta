@@ -25,7 +25,7 @@
             <!-- Month and Year Separator -->
             <div class="row justify-content-center mt-5">
                 <div class="col-8">
-                    <div class="bg-navbar text-white p-2 text-center rounded month-separator">
+                    <div class="bg-light text-dark p-2 text-center rounded month-separator">
                         {{ $eventMonth }}
                     </div>
                 </div>
@@ -38,8 +38,8 @@
         @endif
 
         <!-- Event Card -->
-        <div class="col-8">
-            <div class="card mb-3 shadow-sm event-card">
+        <div class="col-md-8 mb-3">
+            <div class="card shadow-sm event-card">
                 <div class="card-body d-flex align-items-center">
                     <div class="me-4 text-center">
                         <h3 class="mb-0 event-date">{{ \Carbon\Carbon::parse($event->date)->format('d') }}</h3>

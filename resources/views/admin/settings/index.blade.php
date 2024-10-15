@@ -4,7 +4,7 @@
 <div class="container">
     <h1>{{ __('settings.settings') }}</h1>
 
-    <form action="{{ route('admin.settings.updateGeneral') }}" method="POST">
+    <form action="{{ route('admin.settings.updateGeneral') }}" method="POST" class="mb-5">
         @csrf
         <h3>{{ __('settings.general_settings') }}</h3>
 
@@ -15,7 +15,7 @@
 
         <div class="mb-3">
             <label for="default_language" class="form-label">{{ __('settings.default_language') }}</label>
-            <select class="form-control" id="default_language" name="default_language">
+            <select class="form-select" id="default_language" name="default_language" required>
                 <option value="en" {{ ($settings['default_language'] ?? '') == 'en' ? 'selected' : '' }}>{{ __('settings.english') }}</option>
                 <option value="fr" {{ ($settings['default_language'] ?? '') == 'fr' ? 'selected' : '' }}>{{ __('settings.french_canadian') }}</option>
             </select>

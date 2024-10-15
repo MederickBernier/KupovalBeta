@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <h2>{{ __('categories.title') }}</h2>
 
     <a href="{{ route('admin.categories.create') }}" class="btn btn-success mb-3">{{ __('categories.create_new') }}</a>
 
     <table class="table table-bordered">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th>{{ __('categories.name') }}</th>
                 <th>{{ __('categories.actions') }}</th>

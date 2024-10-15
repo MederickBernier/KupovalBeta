@@ -9,7 +9,8 @@
                     <div>
                         <strong>{{ $feedback['user'] }}</strong>
                         <p class="mb-1">{{ $feedback['message'] }}</p>
-                        <span class="badge {{ $feedback['rating'] >= 4 ? 'bg-success' : ($feedback['rating'] >= 2 ? 'bg-warning' : 'bg-danger') }}">
+                        <span class="badge
+                            {{ $feedback['rating'] >= 4 ? 'bg-success' : ($feedback['rating'] >= 2 ? 'bg-warning' : 'bg-danger') }}">
                             {{ __('dashboard.rating') }}: {{ $feedback['rating'] }}
                         </span>
                     </div>

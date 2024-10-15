@@ -26,7 +26,7 @@
                     <td>{{ $order['Customer'] }}</td>
                     <td>{{ $order['Status'] }}</td>
                     <td>${{ number_format($order['Total'], 2) }}</td>
-                    <td>{{ $order['Date'] }}</td>
+                    <td>{{ \Carbon\Carbon::parse($order['Date'])->format('Y-m-d') }}</td>
                 </tr>
                 @endforeach
             </tbody>

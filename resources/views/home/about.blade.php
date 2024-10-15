@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 mb-4">
             @if($artist->profile_picture)
                 <img src="{{ asset('images/' . $artist->profile_picture) }}" class="img-fluid rounded" alt="{{ $artist->alias }}">
             @else

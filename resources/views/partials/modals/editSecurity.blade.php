@@ -10,15 +10,15 @@
                     @csrf
                     <div class="mb-3">
                         <label for="current_password" class="form-label">@lang('user_profile.current_password')</label>
-                        <input type="password" class="form-control" id="current_password" name="current_password">
+                        <input type="password" class="form-control" id="current_password" name="current_password" required>
                     </div>
                     <div class="mb-3">
                         <label for="new_password" class="form-label">@lang('user_profile.new_password')</label>
-                        <input type="password" class="form-control" id="new_password" name="new_password">
+                        <input type="password" class="form-control" id="new_password" name="new_password" required>
                     </div>
                     <div class="mb-3">
                         <label for="confirm_password" class="form-label">@lang('user_profile.confirm_password')</label>
-                        <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
                     </div>
                     <button type="submit" class="btn btn-primary">@lang('user_profile.save_changes')</button>
                 </form>

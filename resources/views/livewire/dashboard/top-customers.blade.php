@@ -1,10 +1,10 @@
-<div class="card mt-4">
+<div class="card mt-4 shadow-sm">
     <div class="card-header">
         <h5>{{ __('dashboard.top_customers') }}</h5>
     </div>
     <div class="card-body p-0">
         <table class="table table-striped mb-0">
-            <thead>
+            <thead class="table-dark">
                 <tr>
                     <th>{{ __('dashboard.name') }}</th>
                     <th>{{ __('dashboard.total_spent') }}</th>

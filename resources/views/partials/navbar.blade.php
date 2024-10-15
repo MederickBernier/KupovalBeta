@@ -25,7 +25,6 @@
                 </ul>
                 <ul class="navbar-nav">
                     @guest
-                        <!-- Show these links if the user is not authenticated -->
                         <li class="nav-item">
                             <a class="btn btn-primary me-2 mb-2 mb-lg-0" href="{{ route('login') }}">@lang('navbar.login')</a>
                         </li>
@@ -33,7 +32,6 @@
                             <a class="btn btn-secondary mb-2 mb-lg-0" href="{{ route('register') }}">@lang('navbar.register')</a>
                         </li>
                     @else
-                        <!-- Show this dropdown menu if the user is authenticated -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}

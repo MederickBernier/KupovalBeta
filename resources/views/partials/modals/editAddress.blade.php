@@ -10,15 +10,15 @@
                     @csrf
                     <div class="mb-3">
                         <label for="address" class="form-label">@lang('user_profile.address')</label>
-                        <input type="text" class="form-control" id="address" name="address" value="{{ $user->address }}">
+                        <input type="text" class="form-control" id="address" name="address" value="{{ $user->address }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="city" class="form-label">@lang('user_profile.city')</label>
-                        <input type="text" class="form-control" id="city" name="city" value="{{ $user->city }}">
+                        <input type="text" class="form-control" id="city" name="city" value="{{ $user->city }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="zip_code" class="form-label">@lang('user_profile.zip_code')</label>
-                        <input type="text" class="form-control" id="zip_code" name="zip_code" value="{{ $user->zip_code }}">
+                        <input type="text" class="form-control" id="zip_code" name="zip_code" value="{{ $user->zip_code }}" required>
                     </div>
                     <button type="submit" class="btn btn-primary">@lang('user_profile.save_changes')</button>
                 </form>

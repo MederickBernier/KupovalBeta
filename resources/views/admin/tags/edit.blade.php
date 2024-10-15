@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <h2>{{ __('tags.edit_tag') }}</h2>
 
     <form action="{{ route('admin.tags.update', $tag->id) }}" method="POST">
         @csrf
         @method('PUT')
-        <div class="form-group">
+        <div class="form-group mb-3">
             <label for="name">{{ __('tags.tag_name') }}</label>
             <input type="text" name="name" class="form-control" value="{{ $tag->name }}" required>
         </div>

@@ -39,9 +39,9 @@
                 </a>
                 <div class="collapse" id="shopCollapse">
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('admin.artworks.index') }}" class="nav-link">@lang('dashboard.manage_artworks')</a></li>
+                        <li><a href="#" class="nav-link">@lang('dashboard.manage_artworks')</a></li>
                         <li><a href="#" class="nav-link">@lang('dashboard.inventory_management')</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.orders')</a></li>
+                        <li><a href="#" class="nav-link">@lang('dashboard.manage_orders')</a></li>
                     </ul>
                 </div>
             </li>

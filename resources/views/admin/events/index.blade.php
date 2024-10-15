@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <h1>{{ __('events.title') }}</h1>
     <a href="{{ route('admin.events.create') }}" class="btn btn-primary mb-3">@lang('events.add_new')</a>
 
-    <table class="table">
-        <thead>
+    <table class="table table-striped">
+        <thead class="table-dark">
             <tr>
                 <th>{{ __('events.table.title') }}</th>
                 <th>{{ __('events.table.artist') }}</th>
@@ -27,7 +27,7 @@
                         <form action="{{ route('admin.events.destroy', $event->id) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">@lang('events.delete')</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('@lang('events.confirm_delete')');">@lang('events.delete')</button>
                         </form>
                     </td>
                 </tr>

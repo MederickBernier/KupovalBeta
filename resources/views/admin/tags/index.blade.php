@@ -6,8 +6,8 @@
 
     <a href="{{ route('admin.tags.create') }}" class="btn btn-success mb-3">{{ __('tags.create_tag_button') }}</a>
 
-    <table class="table table-bordered">
-        <thead>
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
             <tr>
                 <th>{{ __('tags.name') }}</th>
                 <th>{{ __('tags.actions') }}</th>
