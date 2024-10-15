@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     HomeController, AuthController, UserController, AdminController,
     ArtworksController, CategoryController, TagController,
-    SettingsController, EventController
+    SettingsController, EventController, ShopController,
+    ProductTypeController, ArtworkVariantController
 };
 use App\Http\Middleware\AdminMiddleware;
 
@@ -14,6 +15,12 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/events', [HomeController::class, 'events'])->name('events');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+
+// Shop Routes
+Route::prefix('shop')->name('shop.')->group(function () {
+    Route::get('/', [ShopController::class, 'index'])->name('index'); // List all artworks
+    Route::get('/{artwork}', [ShopController::class, 'show'])->name('show'); // Show specific artwork
+});
 
 // Authentication routes
 Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
@@ -69,6 +76,26 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/{artwork}/edit', [ArtworksController::class, 'edit'])->name('edit');
             Route::put('/{artwork}', [ArtworksController::class, 'update'])->name('update');
             Route::delete('/{artwork}', [ArtworksController::class, 'destroy'])->name('destroy');
+
+            // Artwork Variant routes
+            Route::prefix('{artwork}/variants')->name('artwork_variants.')->group(function () {
+                Route::get('/', [ArtworkVariantController::class, 'index'])->name('index');
+                Route::get('/create', [ArtworkVariantController::class, 'create'])->name('create');
+                Route::post('/', [ArtworkVariantController::class, 'store'])->name('store');
+                Route::get('/{variant}/edit', [ArtworkVariantController::class, 'edit'])->name('edit');
+                Route::put('/{variant}', [ArtworkVariantController::class, 'update'])->name('update');
+                Route::delete('/{variant}', [ArtworkVariantController::class, 'destroy'])->name('destroy');
+            });
+        });
+
+        // Product Type routes
+        Route::prefix('product_types')->name('product_types.')->group(function () {
+            Route::get('/', [ProductTypeController::class, 'index'])->name('index');
+            Route::get('/create', [ProductTypeController::class, 'create'])->name('create');
+            Route::post('/', [ProductTypeController::class, 'store'])->name('store');
+            Route::get('/{productType}/edit', [ProductTypeController::class, 'edit'])->name('edit');
+            Route::put('/{productType}', [ProductTypeController::class, 'update'])->name('update');
+            Route::delete('/{productType}', [ProductTypeController::class, 'destroy'])->name('destroy');
         });
 
         // Settings routes

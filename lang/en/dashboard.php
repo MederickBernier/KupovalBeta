@@ -82,4 +82,7 @@ return [
     'comment' => 'Comment',
     'order_id' => 'Order ID',
     'total' => 'Total',
+    'manage_product_types' => 'Manage Product Types',
+    'manage_artwork_variants' => 'Manage Artwork Variants',
+    'announcements' => 'Announcements',
 ];

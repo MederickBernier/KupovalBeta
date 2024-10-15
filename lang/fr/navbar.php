@@ -12,6 +12,7 @@ return [
     'profile' => 'Profil',
     'dashboard' => 'Tableau de bord',
     'logout' => 'Déconnexion',
+    'shop' => 'Boutique'
 ];
 
 ?>

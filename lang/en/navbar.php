@@ -12,6 +12,7 @@ return [
     'profile' => 'Profile',
     'dashboard' => 'Dashboard',
     'logout' => 'Logout',
+    'shop' => 'Shop'
 ];
 
 ?>

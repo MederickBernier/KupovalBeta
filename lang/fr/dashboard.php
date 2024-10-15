@@ -81,7 +81,10 @@ return [
     'date' => 'Date',
     'comment' => 'Commentaire',
     'order_id' => 'ID de Commande',
-    'total' => 'Total'
+    'total' => 'Total',
+    'manage_product_types' => 'Gérer les types de produits',
+    'manage_artwork_variants' => 'Gérer les variantes d\'œuvres d\'art',
+    'announcements' => 'Annonces',
 ];
 
 ?>

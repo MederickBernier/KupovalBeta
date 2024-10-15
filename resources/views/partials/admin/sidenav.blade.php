@@ -4,14 +4,12 @@
             <i class="bi bi-speedometer2"></i> @lang('dashboard.dashboard')
         </a>
         <ul class="nav flex-column">
-
             <li class="nav-item">
                 <a class="nav-link" target="_blank" href="{{ route('index') }}">
                     <i class="bi bi-arrow-return-left"></i> @lang('dashboard.view_site')
                 </a>
             </li>
 
-            <!-- Dashboard Section -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.dashboard') }}">
                     <i class="bi bi-house-door-fill"></i> @lang('dashboard.dashboard')
@@ -39,9 +37,9 @@
                 </a>
                 <div class="collapse" id="shopCollapse">
                     <ul class="list-unstyled">
-                        <li><a href="#" class="nav-link">@lang('dashboard.manage_artworks')</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.inventory_management')</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.manage_orders')</a></li>
+                        <li><a href="{{ route('admin.artworks.index') }}" class="nav-link">@lang('dashboard.manage_artworks')</a></li>
+                        <li><a href="{{ route('admin.product_types.index') }}" class="nav-link">@lang('dashboard.manage_product_types')</a></li>
+                        <li><a href="{{ route('admin.artworks.index') }}" class="nav-link">@lang('dashboard.manage_artwork_variants')</a></li>
                     </ul>
                 </div>
             </li>

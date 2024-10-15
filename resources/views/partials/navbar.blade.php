@@ -14,6 +14,9 @@
                         <a class="nav-link {{ $page == 'gallery' ? 'active' : '' }}" href="{{ route('gallery') }}">@lang('navbar.gallery')</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ $page == 'shop' ? 'active' : '' }}" href="{{ route('shop.index') }}">@lang('navbar.shop')</a> <!-- Link to the shop -->
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ $page == 'about' ? 'active' : '' }}" href="{{ route('about') }}">@lang('navbar.about')</a>
                     </li>
                     <li class="nav-item">
