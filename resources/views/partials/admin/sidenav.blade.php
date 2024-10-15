@@ -31,34 +31,17 @@
                 </div>
             </li>
 
-            <!-- Artworks Management Section -->
+            <!-- Shop Management Section -->
             <li class="nav-item">
-                <a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#artworksCollapse" role="button" aria-expanded="false" aria-controls="artworksCollapse">
-                    <i class="bi bi-brush-fill"></i> @lang('dashboard.artworks')
+                <a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#shopCollapse" role="button" aria-expanded="false" aria-controls="shopCollapse">
+                    <i class="bi bi-cart-fill"></i> @lang('dashboard.shop')
                     <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <div class="collapse" id="artworksCollapse">
+                <div class="collapse" id="shopCollapse">
                     <ul class="list-unstyled">
                         <li><a href="{{ route('admin.artworks.index') }}" class="nav-link">@lang('dashboard.manage_artworks')</a></li>
-                        <li><a href="{{ route('admin.artworks.create') }}" class="nav-link">@lang('artworks.add_new')</a></li>
-                        <li><a href="{{ route('admin.categories.index') }}" class="nav-link">@lang('dashboard.categories')</a></li>
-                        <li><a href="{{ route('admin.tags.index') }}" class="nav-link">@lang('dashboard.tags')</a></li>
                         <li><a href="#" class="nav-link">@lang('dashboard.inventory_management')</a></li>
-                    </ul>
-                </div>
-            </li>
-
-            <!-- Order Management Section -->
-            <li class="nav-item">
-                <a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#ordersCollapse" role="button" aria-expanded="false" aria-controls="ordersCollapse">
-                    <i class="bi bi-cart-fill"></i> @lang('dashboard.orders')
-                    <i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <div class="collapse" id="ordersCollapse">
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="nav-link">@lang('dashboard.manage_orders')</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.refunds_returns')</a></li>
-                        <li><a href="#" class="nav-link">@lang('dashboard.shipping_delivery')</a></li>
+                        <li><a href="#" class="nav-link">@lang('dashboard.orders')</a></li>
                     </ul>
                 </div>
             </li>
