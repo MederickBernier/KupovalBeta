@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('artwork_inventory', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('artwork_id')->constrained('artworks')->onDelete('cascade');
-            $table->integer('quantity');
-            $table->timestamps();
+        Schema::table('artworks', function (Blueprint $table) {
+            $table->foreignId('product_type_id')->nullable()->onDelete('cascade');
         });
     }
 
@@ -24,6 +21,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('artwork_inventory');
+        Schema::table('artworks', function (Blueprint $table) {
+            $table->dropForeign(['product_type_id']);
+            $table->dropColumn('product_type_id');
+        });
     }
 };
