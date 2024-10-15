@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\ArtworkImage;
-use App\Models\User;
 
 class Artwork extends Model
 {
@@ -17,6 +14,7 @@ class Artwork extends Model
         'title',
         'description',
         'image_path',
+        'category_id',
     ];
 
     protected $dates = ['deleted_at'];
@@ -35,5 +33,9 @@ class Artwork extends Model
 
     public function tags(){
         return $this->belongsToMany(Tag::class);
+    }
+    
+    public function variants(){
+        return $this->hasMany(ArtworkVariant::class);
     }
 }

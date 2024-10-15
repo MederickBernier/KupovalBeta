@@ -20,7 +20,7 @@
     <!-- Admin Sidebar -->
     @include('partials.admin.sidenav')
     <!-- Main Content Area -->
-    <div class="admin_content">
+    <div class="container-fluid">
         @yield('content')
     </div>
 </div>

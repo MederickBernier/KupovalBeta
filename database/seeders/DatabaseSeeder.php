@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             ArtworkSeeder::class,
             EventSeeder::class,
             ReviewSeeder::class,
+            ProductTypeSeeder::class,
+            ArtworkVariantSeeder::class,
         ]);
 
     }

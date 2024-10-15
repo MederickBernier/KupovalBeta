@@ -11,6 +11,8 @@ return [
         'description' => 'Description',
         'image' => 'Image',
         'actions' => 'Actions',
+        'price' => 'Price',
+        'stock' => 'Stock',
     ],
     'edit' => 'Edit',
     'delete' => 'Delete',
@@ -23,8 +25,16 @@ return [
         'tags' => 'Tags',
         'create' => 'Create',
         'update' => 'Update',
+        'is_for_sale' => 'Is this artwork for sale?',
+        'price' => 'Price',
+        'stock' => 'Stock',
+        'product_type' => 'Product Type',
+        'variants' => 'Artwork Variants',
     ],
     'add_new_artwork' => 'Add New Artwork',
+    'manage_variants' => 'Manage Variants',
+    'manage_categories' => 'Manage Categories',
+    'manage_tags' => 'Manage Tags',
 ];
 
 ?>

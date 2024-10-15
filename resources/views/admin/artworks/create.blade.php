@@ -40,7 +40,30 @@
             </select>
         </div>
 
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="is_for_sale" name="is_for_sale">
+            <label class="form-check-label" for="is_for_sale">{{ __('artworks.form.is_for_sale') }}</label>
+        </div>
+
+        <div id="shopFields" style="display: none;">
+            <div class="mb-3">
+                <label for="price" class="form-label">{{ __('artworks.form.price') }}</label>
+                <input type="text" class="form-control" id="price" name="price">
+            </div>
+            <div class="mb-3">
+                <label for="stock" class="form-label">{{ __('artworks.form.stock') }}</label>
+                <input type="number" class="form-control" id="stock" name="stock">
+            </div>
+            <!-- Add a component for variants if needed -->
+        </div>
+
         <button type="submit" class="btn btn-primary">{{ __('artworks.form.create') }}</button>
     </form>
 </div>
+
+<script>
+    document.getElementById('is_for_sale').addEventListener('change', function() {
+        document.getElementById('shopFields').style.display = this.checked ? 'block' : 'none';
+    });
+</script>
 @endsection

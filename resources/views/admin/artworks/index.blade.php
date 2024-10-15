@@ -13,6 +13,8 @@
                 <th>{{ __('artworks.table.category') }}</th>
                 <th>{{ __('artworks.table.tags') }}</th>
                 <th>{{ __('artworks.table.description') }}</th>
+                <th>{{ __('artworks.table.price') }}</th>
+                <th>{{ __('artworks.table.stock') }}</th>
                 <th>{{ __('artworks.table.image') }}</th>
                 <th>{{ __('artworks.table.actions') }}</th>
             </tr>
@@ -29,6 +31,8 @@
                         @endforeach
                     </td>
                     <td>{{ $artwork->description }}</td>
+                    <td>{{ $artwork->price }}</td>
+                    <td>{{ $artwork->stock }}</td>
                     <td><img src="{{ asset('images/' . $artwork->image_path) }}" width="100" alt="{{ $artwork->title }}"></td>
                     <td>
                         <a href="{{ route('admin.artworks.edit', $artwork->id) }}" class="btn btn-warning">{{ __('artworks.edit') }}</a>
